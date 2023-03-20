@@ -32,7 +32,7 @@ public class Node : MonoBehaviour {
 
 		if (turret != null)
 		{
-			Debug.Log("Can't build there! - TODO: Display on screen.");
+			Debug.Log("Impossible to build there!");
 			return;
 		}
 

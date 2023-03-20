@@ -25,11 +25,9 @@ public class BuildManager : MonoBehaviour {
 	{
 		if (PlayerStats.money < turretToBuild.cost)
 		{
-			Debug.Log("Not enough money to build that!");
+			Debug.Log("Not enough money to build this defense!");
 			return;
 		}
-
-		// buy and instantiate the turret on the current node
 		
 		PlayerStats.money -= turretToBuild.cost;
 

@@ -9,13 +9,13 @@ public class EnemyMovement : MonoBehaviour {
 
 	private Enemy enemy;
 
-	void Start()
+	private void Start()
 	{
 		enemy = GetComponent<Enemy>();
 		target = Waypoints.points[0];
 	}
 
-	void Update()
+	private void Update()
 	{
 		Vector3 dir = target.position - transform.position;
 		transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour {
 		enemy.speed = enemy.startSpeed;
 	}
 
-	void GetNextWaypoint()
+	private void GetNextWaypoint()
 	{
 		if (wavepointIndex >= Waypoints.points.Length - 1)
 		{
@@ -37,7 +37,7 @@ public class EnemyMovement : MonoBehaviour {
 		target = Waypoints.points[wavepointIndex];
 	}
 
-	void EndPath()
+	private void EndPath()
 	{
 		PlayerStats.lives--;
 		Destroy(gameObject);

@@ -22,17 +22,14 @@ public class WaveSpawner : MonoBehaviour {
 
 		countdown -= Time.deltaTime;
 		countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
-
-		// format the string to 00:00
+		
 		waveCountdownText.text = $"{countdown:00.00}";
 	}
 
 	private IEnumerator SpawnWave()
 	{
-		// change the wave
 		currentWave++;
-
-		// spawn enemies every 0.5 seconds
+		
 		for (var i = 0; i < currentWave; i++)
 		{
 			SpawnEnemy();

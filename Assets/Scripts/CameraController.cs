@@ -12,14 +12,12 @@ public class CameraController : MonoBehaviour {
 	private bool doMovement = true;
 	
 	private void Update () {
-
 		// lock cam
 		if (Input.GetKeyDown(KeyCode.Escape)) doMovement = !doMovement;
 
 		if (!doMovement) return;
 
 		// move cam with mouse or keyboard
-		
 		if (Input.GetKey("w") || Input.GetKey("z") || Input.mousePosition.y >= Screen.height - panBorderThickness)
 			transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
 		
@@ -34,7 +32,6 @@ public class CameraController : MonoBehaviour {
 		
 
 		// zoom in and zoom out
-		
 		var scroll = Input.GetAxis("Mouse ScrollWheel");
 
 		Vector3 pos = transform.position;
